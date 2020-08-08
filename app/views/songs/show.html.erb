@@ -1,0 +1,10 @@
+<h1><%= @song.name %> Song</h1>
+
+<p class=menu> Artist: </p> <p> <%= link_to @song.artist.name, artist_path(@song.artist) %>  </p>
+
+<p class=menu> Genre: </p> <p> <%= link_to @song.genre.name, genre_path(@song.genre) %> </p>
+
+</div>
+
+<%=button_to "Edit Song", edit_song_path, method: :get %> <br>
+<%=button_to "Return to Homepage", home_path, method: :get %> <br>

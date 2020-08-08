@@ -1,0 +1,11 @@
+
+<h1> <%= @genre.name %> Genre</h1>
+<h3> Song: 
+    <ul>
+        <% @genre.songs.each do |song| %>
+        <li><%= link_to song.name, song_path(song) %></li>
+        <% end %>
+    </ul>
+</h3>
+<%=button_to "Edit Genre", edit_genre_path(@genre), method: :get %> <br>
+<%=button_to "Return to Homepage", home_path, method: :get %> <br>

@@ -1,0 +1,12 @@
+
+<h1> Name: <%= @artist.name %> </h1>
+<p> Bio: <%= @artist.bio %> <p>
+<p> Songs:
+<ul> <% @artist.songs.each do |song| %>
+   <li> <%= link_to song.name, song_path(song) %> </li>
+    <% end %>
+    </ul></p>
+
+<%=button_to "Edit Artist", edit_artist_path(@artist), method: :get %> <br>
+<%=button_to "Delete Artist", artist_path(@artist), method: :delete %> <br>
+<%=button_to "Return to Homepage", home_path, method: :get %> <br>
